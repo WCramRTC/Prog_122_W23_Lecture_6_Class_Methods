@@ -23,6 +23,10 @@ namespace Prog_122_W23_Lecture_6_Class_Methods
         //{
         //    this._firstName = firstName;
         //}
+
+        //Review: What’s the name for any field, constructor, property or method that is part of a class?
+        // Members
+
         public Student(string firstName, string lastName, double csiGrade, double genEdGrade)
         {
             _firstName = firstName;

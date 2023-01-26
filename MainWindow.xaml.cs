@@ -23,9 +23,10 @@ namespace Prog_122_W23_Lecture_6_Class_Methods
     /// </summary>
     public partial class MainWindow : Window
     {
-     
 
-        //Review: What’s the name for any field, constructor, property or method that is part of a class?
+        List<Student> students = new List<Student>();
+
+   
         //Review: What are the 4 parts of declaring a method?
         //What keyword allows you to access members related to the specific instance?
         //A method build inside a class has access to what, even it’s access modifier is set to private?
@@ -42,5 +43,27 @@ namespace Prog_122_W23_Lecture_6_Class_Methods
             InitializeComponent();
 
         }
+
+        private void btnAddStudent_Click(object sender, RoutedEventArgs e)
+        {
+            string firstName = txtFirstName.Text;
+            string lastName = txtLastName.Text;
+            double csiGrade = double.Parse(txtCSIGrade.Text);
+            double genEdGrade = double.Parse(txtGenEdGrade.Text);
+
+            //Student student = new Student(firstName, lastName, csiGrade, genEdGrade);
+
+            // Add student to my list of students
+            students.Add(new Student(firstName, lastName, csiGrade, genEdGrade));
+
+            Student s = students[0];
+
+
+            // How do I display my student FROM my list
+            runDisplay.Text = s.FirstName + " " + s.LastName + " " + s.CsiGrade + " " + s.GenEdGrade;
+
+
+
+        } // btnAddStudent_Click
     }
 }
