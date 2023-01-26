@@ -7,6 +7,24 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <RichTextBox Margin="341,45,93,45">
+            <FlowDocument>
+                <Paragraph>
+                    <Run Text="RichTextBox"/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <Canvas Margin="51,74,520,73" Background="#FF54AEDB">
+            <Label Content="First Name" Canvas.Left="10" Canvas.Top="10" FontSize="18" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Label Content="Last Name" Canvas.Left="10" Canvas.Top="76" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Label Content="CSI" Canvas.Top="144" FontSize="18" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Left="10"/>
+            <Label Content="GenEd" Canvas.Left="123" Canvas.Top="144" FontSize="18" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <TextBox x:Name="txtFirstName" Canvas.Left="10" TextWrapping="Wrap" Canvas.Top="44" Width="120"/>
+            <TextBox x:Name="txtLastName" Canvas.Left="10" TextWrapping="Wrap" Canvas.Top="115" Width="120" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <TextBox x:Name="txtCSIGrade" Canvas.Left="10" TextWrapping="Wrap" Canvas.Top="183" Width="68" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <TextBox x:Name="txtGenEdGrade" Canvas.Left="123" TextWrapping="Wrap" Canvas.Top="183" Width="68" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Button x:Name="btnAddStudent" Content="Add Student" Canvas.Left="34" Canvas.Top="228" Height="33" Width="162"/>
+        </Canvas>
 
     </Grid>
 </Window>
