@@ -38,6 +38,7 @@ namespace Prog_122_W23_Lecture_6_Class_Methods.DataExample
                 {
                     new User("Will", "Cram", "Teacher"),
                     new User("Anne", "Nguyen", "Teacher"),
+                    new User("Jon", "Reed", "Teacher"),
                 };
 
             using (var writer = new StreamWriter("../../../DataExample/users2.csv"))

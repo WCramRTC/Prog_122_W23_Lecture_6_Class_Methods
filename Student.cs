@@ -10,7 +10,7 @@ namespace Prog_122_W23_Lecture_6_Class_Methods
     // public
     // private
     // protected
-    class Student
+    public class Student
     {
         // Field
         string _firstName;
@@ -67,7 +67,37 @@ namespace Prog_122_W23_Lecture_6_Class_Methods
         //What is the purpose of a method?
         // Easy to code, easy to read, easy to refactor, and easy to resuse
 
-        //What is a class method?
+        //Review: What are the 4 parts of declaring a method?
+        // Access Modifier - return type - Name - Paremeters
+        //What keyword allows you to access members related to the specific instance?
+        public double StudentAverage()
+        {
+            return (_csiGrade + _genEdGrade) / 2;
+        }
 
+        // public double StudentAverage(double csigrade, double genedgrade)
+        // return (csigrade + genedgrade) / 2
+
+
+        // s.FirstName + " " + s.LastName + " " + s.CsiGrade + " " + s.GenEdGrade;
+
+        //What does “override .ToString()” allow us to do?
+
+
+
+        //What is a class method?
+        // A class method directly interacts with the memebers of a class
+
+
+
+        //A method build inside a class has access to what, even it’s access modifier is set to private?
+
+
+        // How to override to string
+        // First Name Last Name - CSI Grade - Gen Grade
+        public override string ToString()
+        {
+            return $"{this._firstName} {this._lastName} - Gen Ed Grade: {this._genEdGrade} - CSI Grade {this._csiGrade} - Average {StudentAverage()}";
+        } // ToString
     }
 }

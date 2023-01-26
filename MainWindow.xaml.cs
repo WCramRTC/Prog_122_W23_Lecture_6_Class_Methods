@@ -26,12 +26,7 @@ namespace Prog_122_W23_Lecture_6_Class_Methods
 
         List<Student> students = new List<Student>();
 
-   
-        //Review: What are the 4 parts of declaring a method?
-        //What keyword allows you to access members related to the specific instance?
-        //A method build inside a class has access to what, even it’s access modifier is set to private?
-        //What does “override .ToString()” allow us to do?
-        //You use the* ____ operator * do you use to access members inside of an instanced class?
+        Course csi122;
 
 
         //Optional: 
@@ -41,10 +36,37 @@ namespace Prog_122_W23_Lecture_6_Class_Methods
         public MainWindow()
         {
             InitializeComponent();
+            csi122 = new Course("CSI 122", "Will Cram");
+            new DataExample.DataExample().Show();
 
         }
 
         private void btnAddStudent_Click(object sender, RoutedEventArgs e)
+        {
+            AddStudentToList();
+
+            int lastStudentEntered = students.Count - 1;
+            Student lastStudent = students[lastStudentEntered];
+
+
+            csi122.EnrollStudent(lastStudent);
+           
+            runDisplay.Text = "";
+            runDisplay.Text = csi122.CourseName + " " + csi122.Teacher + "\n";
+            MessageBox.Show(csi122.RosterAverage().ToString());
+
+
+            foreach (Student student in csi122.CourseRoster)
+            {
+                runDisplay.Text += student + "\n";
+            }
+
+            //DisplayStudents();
+
+        } // btnAddStudent_Click
+
+
+        public void AddStudentToList()
         {
             string firstName = txtFirstName.Text;
             string lastName = txtLastName.Text;
@@ -56,14 +78,21 @@ namespace Prog_122_W23_Lecture_6_Class_Methods
             // Add student to my list of students
             students.Add(new Student(firstName, lastName, csiGrade, genEdGrade));
 
-            Student s = students[0];
+            
+        } // 
 
+        public void DisplayStudents()
+        {
+            // CLears our display
+            runDisplay.Text = "";
 
-            // How do I display my student FROM my list
-            runDisplay.Text = s.FirstName + " " + s.LastName + " " + s.CsiGrade + " " + s.GenEdGrade;
+            // Shows all of our students
+            for (int i = 0; i < students.Count; i++)
+            {
+                runDisplay.Text += students[i] + "\n";
+               
+            }
+        }
 
-
-
-        } // btnAddStudent_Click
     }
 }
